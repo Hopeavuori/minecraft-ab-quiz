@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Minecraft A/B -tietovisa (React + Vite + Tailwind)
 
 ## Nopein tapa käyntiin
@@ -18,3 +19,16 @@ npm run preview
 
 ## Muokkaa kysymyksiä
 Avaa `src/App.jsx` ja muokkaa `QUESTIONS`-taulukkoa.
+=======
+# minecraft-ab-quiz
+Minecraft A/B -tietovisa (React + Vite)
+# Minecraft A/B -tietovisa
+
+React + Vite -pohjainen Minecraft-aiheinen A/B-tietovisa.
+Toimii tietokoneella ja mobiilissa (CrazyGames-yhteensopiva).
+
+## 🚀 Käynnistys paikallisesti
+```bash
+npm install
+npm run dev
+>>>>>>> 1087845c0ef6afbaa28bc8ead51b2f6d99f6d89a
