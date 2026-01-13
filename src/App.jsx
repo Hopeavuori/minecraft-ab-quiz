@@ -123,14 +123,19 @@ export default function App() {
     setAnsweredThis(false);
 
   }
-
-  function reveal() {
-   function reveal() {
+function reveal() {
   if (!selected) return;
-  setRevealed((r) => !r);
+
+  // Kun paljastetaan ENSIMMÄISTÄ kertaa tällä kysymyksellä:
+  if (!revealed && !answeredThis) {
+    setAnsweredThis(true);
+    setAnsweredCount((n) => n + 1);
+    if (selected === q.correct) setCorrectCount((n) => n + 1);
   }
 
-  }
+  setRevealed((r) => !r);
+}
+
 
   function toggleFullscreen() {
     const el = document.documentElement;
@@ -403,7 +408,7 @@ export default function App() {
               </div>
 
               <div className="mt-5 text-sm opacity-80">
-                CrazyGames-vinkki: tee build (npm run build) ja zip-pakkaa dist-kansion sisältö.
+                
               </div>
             </div>
           </div>
