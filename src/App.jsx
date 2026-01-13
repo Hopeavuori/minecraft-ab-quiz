@@ -92,6 +92,8 @@ export default function App() {
     setRevealed(false);
     setCorrectCount(0);
     setAnsweredCount(0);
+    setAnsweredThis(false);
+
   }
 
   function resetOrdered() {
@@ -101,6 +103,8 @@ export default function App() {
     setRevealed(false);
     setCorrectCount(0);
     setAnsweredCount(0);
+    setAnsweredThis(false);
+
   }
 
   function next() {
@@ -123,18 +127,21 @@ export default function App() {
     setAnsweredThis(false);
 
   }
+
 function reveal() {
   if (!selected) return;
 
-  // Kun paljastetaan ENSIMMÄISTÄ kertaa tällä kysymyksellä:
-  if (!revealed && !answeredThis) {
+  // Lasketaan vain eka kerta, kun tämä kysymys "paljastetaan"
+  if (!answeredThis && !revealed) {
     setAnsweredThis(true);
     setAnsweredCount((n) => n + 1);
     if (selected === q.correct) setCorrectCount((n) => n + 1);
   }
 
+  // Näytä/piilota selitys
   setRevealed((r) => !r);
 }
+
 
 
   function toggleFullscreen() {
