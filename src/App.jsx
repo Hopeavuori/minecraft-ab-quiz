@@ -300,14 +300,19 @@ function reveal() {
                       key={opt}
                       
                       onClick={() => {
+                        // ÄLÄ anna vaihtaa vastausta paljastuksen jälkeen
+                        if (revealed) return;
+
                         setSelected(opt);
 
+                        // Lasketaan vastaus vain kerran / kysymys
                         if (!answeredThis) {
                           setAnsweredThis(true);
                           setAnsweredCount((n) => n + 1);
                           if (opt === q.correct) setCorrectCount((n) => n + 1);
                         }
                       }}
+
 
                       className={[base, chosen, correct, wrong].join(" ")}
                     >
